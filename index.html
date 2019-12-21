@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <body>
-<h1>Gondolj egy számra 1 és 10 között!</h1>
+<h1>Gondolj egy számra 1 és 100 között!</h1>
 
 <button id="btnIgen" onclick="Igen()" value="Igen">Igen</button>
 <button id="btnNem" onclick="Nem()" value="Nem">Nem</button>
@@ -12,7 +12,7 @@
 
 <script>
 let i=1;
-let j=10;
+let j=100;
 
 let middle;
 
@@ -23,19 +23,19 @@ function Kerdezz(){
 	document.getElementById("btnNem").style.visibility = 'hidden';
     }
     else{
-	middle=Math.floor((i+j)/2);
-    let question='A gondolt szám ' + middle + '-nál/nél nagyobb?';
+	middle=Math.ceil((i+j)/2);
+    let question='A gondolt szám ' + middle + '-nál/nél kisebb?';
 	document.getElementById("question1").innerHTML = question;
 }
 }
 
 function Igen() {
-	i=middle+1;
+	j=middle-1;
     Kerdezz();
 }
 
 function Nem() {
-  j=middle;
+  i=middle;
   Kerdezz();
 }
 
