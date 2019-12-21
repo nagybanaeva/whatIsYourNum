@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>Gondolj egy számra 1 és 10 között!</h1>
+
+<button id="btnIgen" onclick="Igen()" value="Igen">Igen</button>
+<button id="btnNem" onclick="Nem()" value="Nem">Nem</button>
+
+
+	<p id="question1"></p>
+
+
+<script>
+let i=1;
+let j=10;
+
+let middle;
+
+function Kerdezz(){ 
+	if(i===j){
+    document.getElementById("question1").innerHTML = 'A szám, amire gondoltál: ' + i;
+    document.getElementById("btnIgen").style.visibility = 'hidden';
+	document.getElementById("btnNem").style.visibility = 'hidden';
+    }
+    else{
+	middle=Math.floor((i+j)/2);
+    let question='A gondolt szám ' + middle + '-nál/nél nagyobb?';
+	document.getElementById("question1").innerHTML = question;
+}
+}
+
+function Igen() {
+	i=middle+1;
+    Kerdezz();
+}
+
+function Nem() {
+  j=middle;
+  Kerdezz();
+}
+
+Kerdezz();
+	
+</script>
+
+</body>
